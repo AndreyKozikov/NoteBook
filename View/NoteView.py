@@ -8,3 +8,6 @@ class NoteView:
     def display_notes(self, notes):
         for note in notes:
             print(note)
+
+    def input_data(self, prompt):
+        return input(prompt)
