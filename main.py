@@ -6,3 +6,4 @@ if __name__ == "__main__":
 
     presenter = NotePresenter(NoteView())
     presenter.run()
+    

@@ -1,14 +1,15 @@
 from Model.ExecuteOperation import ExecuteOperation
-from Model.FileOperations import FileOperations
 
 
 class ShowMenu(ExecuteOperation):
 
-    def execute(self, notes, callback):
-        fo = FileOperations()
-        serializable_notes = [
-            {"id": note.id, "title": note.title, "body": note.body, "date": note.created_at.strftime("%Y-%m-%d "
-                                                                                                         "%H:%M:%S")}
-            for
-            note in notes.values]
-        fo.save_notes_to_file("notes.json", serializable_notes)
+    def execute(self, *args):
+        args[2]("Поддерживаются следующие команды:\n"
+                "ADD: Добавить заметку\n"
+                "EDIT: Редактировать заметку по номеру\n"
+                "DELETE: Удалить заметку по номеру\n"
+                "SHOW: Показать заметку по номеру\n"
+                "DATE: Показать все заметки с указанной датой\n"
+                "LIST: Показать все заметки\n"
+                "HELP: Показать поддерживаемые команды\n"
+                "EXIT: Завершение работы\n")
